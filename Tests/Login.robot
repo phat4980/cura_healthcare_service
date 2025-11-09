@@ -4,15 +4,15 @@ Suite Setup      Initialize Chrome Client
 Suite Teardown   Close Chrome Client
 Test Template    Verify login unsuccessfully
 
-*** Test Cases ***                  Username               Password
-Valid username, invalid password    ${VALID_USERNAME}      ${INVALID_PASSWORD}
-Valid username, empty password      ${VALID_USERNAME}      ${EMPTY}
-Invalid username, valid password    ${INVALID_USERNAME}    ${VALID_PASSWORD}
-Empty username, valid password      ${EMPTY}               ${VALID_PASSWORD}
-uppercase username, valid password  ${UPPERCASE_USERNAME}  ${VALID_PASSWORD}
-valid username, uppercase password  ${VALID_USERNAME}      ${UPPERCASE_PASSWORD}
-Valid username, valid password      [Template]      Verify login successfully
-                                    ${VALID_USERNAME}      ${VALID_PASSWORD}
+*** Test Cases ***                              Username               Password
+Login with Valid username, invalid password     ${VALID_USERNAME}      ${INVALID_PASSWORD}
+Login with Valid username, empty password       ${VALID_USERNAME}      ${EMPTY}
+Login with Invalid username, valid password     ${INVALID_USERNAME}    ${VALID_PASSWORD}
+Login with Empty username, valid password       ${EMPTY}               ${VALID_PASSWORD}
+Login with uppercase username, valid password   ${UPPERCASE_USERNAME}  ${VALID_PASSWORD}
+Login with valid username, uppercase password   ${VALID_USERNAME}      ${UPPERCASE_PASSWORD}
+Login with Valid username, valid password       [Template]      Verify login successfully
+                                                ${VALID_USERNAME}      ${VALID_PASSWORD}
 
 
 *** Keywords ***
