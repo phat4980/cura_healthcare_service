@@ -15,4 +15,6 @@ Close Chrome Client
 Initialize Chrome Client
     Open Chrome client
     Web Connect To Chrome Client    ${chrome_debug_port}
+
+Open CURA Health Service Page
     Go To    ${home_page_url}
