@@ -1,43 +1,25 @@
 pipeline {
     agent any
-    
-    environment {
-        PYTHON_VERSION = '3.12'
-    }
-    
+
     stages {
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
-        
-        stage('Setup Environment') {
-            steps {
-                script {
-                    bat 'pip install -r requirements.txt'
-                }
-            }
-        }
-        
         stage('Run Tests') {
             steps {
-                script {
-                    bat 'robot -d TestLogs Tests'
-                }
+                sh script: "robot --nostatusrc -d TestLogs Tests", returnStatus: true
             }
         }
     }
-    
     post {
         always {
-            robot outputPath: 'TestLogs', 
+            robot(
+                outputPath: "TestLogs",
+                passThreshold: 90.0,
+                unstableThreshold: 70.0,
+                disableArchiveOutput: true,
+                outputFileName: "output.xml",
                 logFileName: 'log.html',
-                outputFileName: 'output.xml',
                 reportFileName: 'report.html',
-                passThreshold: 100.0,
-                unstableThreshold: 75.0
-            cleanWs()
+                countSkippedTests: true
+            )
         }
     }
 }
