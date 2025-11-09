@@ -1,0 +1,24 @@
+# created by virtualenv automatically
+build/
+dist/
+*.egg-info
+*__pycache__*
+venv/
+.env
+__pycache__/
+*.pyc
+log.html
+output.xml
+report.html
+TestLogs/
+.idea/
+.vscode/
+
+
+#Media files
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.mp3
+*.mp4
