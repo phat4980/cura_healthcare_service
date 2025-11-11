@@ -94,9 +94,16 @@ To automate test runs on code changes, set up Jenkins with ngrok and configure G
 2. In Jenkins, create a new Freestyle job.
 3. In "Build Triggers", check "GitHub hook trigger for GITScm polling".
 4. Configure your build steps to run Robot Framework tests.
+#### Example of 1 report in Jenkins
+![img.png](img.png)
+### Additional informaion
+[Jenkins setup](https://www.jenkins.io/doc/) : Access this tutorial document for more detailed setups
 
-### Additional documentation
-[Jenkins setup](https://www.jenkins.io/doc/)
+Note: You may need to update the variables in [RunConfig.resource](RunConfig.resource) to match your local environment.
+Typical fields to check:
+- chrome_path
+- chrome_debug_port
+- chrome_test_profile_folder
 
 --------------------------
 
