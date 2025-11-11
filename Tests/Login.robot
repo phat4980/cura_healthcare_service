@@ -1,4 +1,5 @@
 *** Settings ***
+Documentation   Login test cases
 Resource    ../Resources/Base.resource
 Suite Setup      Initialize Chrome Client
 Suite Teardown   Close Chrome Client

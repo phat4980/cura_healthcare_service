@@ -7,7 +7,7 @@ Library    SeleniumLibrary
 Web Open Chrome Client
     [Documentation]    Open a chrome client that can be connect repeatedly via specified debug port
     [Arguments]    ${chromeExecPath}    ${chrome_debug_port}  ${chrome_test_profile_folder}
-    ${result} =    Start Process    ${chromeExecPath}    --remote-debugging-port\=${chrome_debug_port}    --user-data-dir\=${chrome_test_profile_folder}    --start-maximized    --disable-popup-blocking
+    ${result} =    Start Process    ${chromeExecPath}    --remote-debugging-port\=${chrome_debug_port}    --user-data-dir\=${chrome_test_profile_folder}    --start-maximized    --disable-popup-blocking   --incognito
     RETURN    ${result}
 
 Web Connect To Chrome Client

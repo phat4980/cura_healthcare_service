@@ -2,6 +2,9 @@
 Documentation   Common keywords
 Resource    ../Utils/WebUtils.resource
 Resource    ../../RunConfig.resource
+Resource    HomeKeywords.resource
+Resource    LoginKeywords.resource
+Resource    ../TestData/LoginData.resource
 
 *** Keywords ***
 Open Chrome client
@@ -18,3 +21,12 @@ Initialize Chrome Client
 
 Open CURA Health Service Page
     Go To    ${home_page_url}
+
+Open Appointment Page
+    Initialize Chrome Client
+    Open CURA Health Service Page
+    Navigate to Login Page
+    Submit Login Form   ${VALID_USERNAME}   ${VALID_PASSWORD}
+
+
+
